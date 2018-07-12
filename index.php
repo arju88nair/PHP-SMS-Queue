@@ -9,7 +9,7 @@ if (!array_key_exists('HTTP_ORIGIN', $_SERVER)) {
 }
 
 // get the HTTP method, path and body of the request
-Request::init($config_setting);
+Request::init();
 
 $paths = explode("/", Request::$requestPath, 2);
 

@@ -34,7 +34,6 @@ class Request {
         
         $requestPath= trim(str_replace($_SERVER["SCRIPT_NAME"], "", $_SERVER["REQUEST_URI"]), "/")."/";
         
-        $request_subFolder = explode("/", trim($_SERVER["REQUEST_URI"], "/") . "/", 2)[0];
 
               self::$requestPath = trim($requestPath, "/") . "/";
         

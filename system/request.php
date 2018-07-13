@@ -24,7 +24,7 @@ class Request {
      * and then create the local properties
      * 
      */
-    public static function init($setting) {
+    public static function init() {
         // get the HTTP method, path and body of the request
         self::$requestMethod = $_SERVER['REQUEST_METHOD'];
         

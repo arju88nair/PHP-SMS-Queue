@@ -56,8 +56,9 @@ class Queue {
         // prepare query
         $stmt = $this->conn->prepare($query);
 
+
         // sanitize
-        $this->firstName =      $this->prepareString($this->body);
+        $this->body =      $this->prepareString($this->body);
         $this->queuedDate =     htmlspecialchars(strip_tags($this->queuedDate));
 
         // bind values

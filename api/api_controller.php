@@ -11,6 +11,7 @@ class API {
     private $queue;
     
     public function __construct($db_connection) {
+
         $this->db = $db_connection;
         $this->queue = new Queue($db_connection);
     }
@@ -73,7 +74,7 @@ class API {
         } 
 
         // set queue property values
-        $this->queue->body = $data->firstName;
+        $this->queue->body = $data->body;
         $this->queue->queuedDate = date('Y-m-d H:i:s');
 
         // create the product

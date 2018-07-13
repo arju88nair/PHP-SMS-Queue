@@ -81,7 +81,20 @@ class Queue {
 
     function getOne()
     {
+// select all query
+        $query = "SELECT
+                    *
+                FROM
+                    " . $this->table_name . " 
+                LIMIT 1";
 
+        // prepare query statement
+        $stmt = $this->conn->prepare($query);
+
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
     }
 
 
@@ -96,9 +109,8 @@ class Queue {
         // prepare query
         $stmt = $this->conn->prepare($query);
 
-
         // sanitize
-        $this->id =      $this->prepareString($this->if);
+        $this->id =      $this->prepareString($this->id);
 
         // bind values
         $stmt->bindParam(":id", $this->body);

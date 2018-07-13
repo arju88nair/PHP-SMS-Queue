@@ -84,6 +84,33 @@ class Queue {
 
     }
 
+
+    function removeOne()
+    {
+        // query to remove record
+        $query = "DELETE FROM  
+                  " . $this->table_name . " 
+                  WHERE
+                   queue_id =:body ";
+
+        // prepare query
+        $stmt = $this->conn->prepare($query);
+
+
+        // sanitize
+        $this->id =      $this->prepareString($this->if);
+
+        // bind values
+        $stmt->bindParam(":id", $this->body);
+
+        // execute query
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     private function prepareString($value) {
         return ($value."" =="")? null:  htmlspecialchars(strip_tags($value));
     }

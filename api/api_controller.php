@@ -136,9 +136,10 @@ class API
 
     }
 
-    public function unQueue()
+    public function unQueue($params)
     {
 
+        $this->queue->removeOne();
     }
 
     private function isJSON($jsonString)

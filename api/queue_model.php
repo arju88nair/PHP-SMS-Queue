@@ -73,6 +73,17 @@ class Queue {
             return false;
         }
     }
+
+
+    /**
+     * @return list
+     */
+
+    function getOne()
+    {
+
+    }
+
     private function prepareString($value) {
         return ($value."" =="")? null:  htmlspecialchars(strip_tags($value));
     }

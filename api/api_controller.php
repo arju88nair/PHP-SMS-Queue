@@ -1,9 +1,8 @@
 <?php
 /**
- * Description of api_controller
- *
- * @author anan
+ * Written by nar, 13/7/18 3:34 PM
  */
+
 include_once 'queue_model.php';
 class API {
     
@@ -53,6 +52,27 @@ class API {
             );
         }
     }
+
+    /**
+     * To do the worker methods
+     * @param string $params
+     */
+    public function queueCheck($params="") {
+
+
+        // query products
+        $stmt = $this->queue->getOne($params);
+        $num = $stmt->rowCount();
+
+        // check if more than 0 record found
+        if($num>0){
+
+
+        }
+    }
+
+
+
     public function create() {
         // get posted data
         $data = file_get_contents("php://input");

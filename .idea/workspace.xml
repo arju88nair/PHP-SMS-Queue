@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc22451d-b359-4ec7-a1cc-82018a1f7fed" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/worker.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/api/api_controller.php" afterPath="$PROJECT_DIR$/api/api_controller.php" />
-      <change beforePath="$PROJECT_DIR$/api/queue_model.php" afterPath="$PROJECT_DIR$/api/queue_model.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="api_controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/api_controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+            <state relative-caret-position="303">
+              <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
               <folding>
                 <element signature="e#6#48#0#PHP" expanded="true" />
                 <element signature="n#getAllQueue#0;n#API#0;n#!!top" expanded="false" />
@@ -212,12 +210,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531409978946</updated>
-      <workItem from="1531409981150" duration="10260000" />
+      <workItem from="1531409981150" duration="11516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10260000" />
+    <option name="totallyTimeSpent" value="11516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="724" extended-state="6" />
@@ -333,8 +331,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/api_controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+        <state relative-caret-position="303">
+          <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
           <folding>
             <element signature="e#6#48#0#PHP" expanded="true" />
             <element signature="n#getAllQueue#0;n#API#0;n#!!top" expanded="false" />

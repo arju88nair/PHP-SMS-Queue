@@ -41,7 +41,7 @@ class API
 
                 $queue_item = array(
                     "id" => $id,
-                    "body" => $firstName,
+                    "body" => $body,
                     "queuedDate" => $queuedDate,
                 );
 
@@ -65,15 +65,38 @@ class API
     public function queueCheck($params = "")
     {
 
-
         // query products
         $stmt = $this->queue->getOne($params);
         $num = $stmt->rowCount();
 
         // check if more than 0 record found
         if ($num > 0) {
+            // queue array
+            $queue_arr = [];
+            $queue_arr["data"] = [];
 
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                // extract row
+                // this will make $row['name'] to
+                // just $name only
+                extract($row);
 
+                $queue_item = array(
+                    "id" => $id,
+                    "body" => $body,
+                    "queuedDate" => $queuedDate,
+                );
+
+            }
+
+            $this->SMSController($queue_item);
+        } else {
+            echo json_encode(
+                [
+                    "status" => "success",
+                    "data" => []
+                ]
+            );
         }
     }
 
@@ -158,5 +181,11 @@ class API
         }
 
         return ($message == "");
+    }
+
+    private function SMSController($data)
+    {
+
+        $body=$data['body'];
     }
 }

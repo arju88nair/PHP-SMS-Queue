@@ -16,15 +16,11 @@ if (!array_key_exists('HTTP_ORIGIN', $_SERVER)) {
     $_SERVER['HTTP_ORIGIN'] = $_SERVER['SERVER_NAME'];
 }
 
-// get the HTTP method, path and body of the request
-Request::init();
-
 // instantiate database and product object
 $database = new Database($config_database);
 $db = $database->getConnection();
 $api = New API($db);
-
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+//header("Access-Control-Allow-Origin: *");
+//header("Content-Type: application/json; charset=UTF-8");
 
 $api->queueCheck($params);

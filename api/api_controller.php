@@ -122,6 +122,8 @@ class API
             exit();
         }
 
+
+
         // set queue property values
         $this->queue->body = $data->body;
         $this->queue->queuedDate = date('Y-m-d H:i:s');
@@ -179,13 +181,29 @@ class API
         if ($data->body === "") {
             $message = "Body can't be empty";
         }
-
         return ($message == "");
     }
 
     private function SMSController($data)
     {
-
+        // Do the mock dumping of SMS data to the log
         $body=$data['body'];
+        error_log(print_r($body, true), 3, 'logs/sms.log');
+
+        $this->removeQueue($data['id']);
+
+    }
+
+    private function removeQueue($id)
+    {
+       $flag= $this->queue->removeOne($id);
+       if($flag)
+       {
+           error_log(print_r("Successfully removed", true), 3, 'logs/success.log');
+       }
+       else{
+           error_log(print_r("Something went wrong", true), 3, 'logs/error.log');
+
+       }
     }
 }

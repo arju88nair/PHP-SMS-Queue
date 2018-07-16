@@ -1,7 +1,6 @@
 <?php
 /**
  * Description of queue
- *
  */
 class Queue {
     // database connection and table name
@@ -11,6 +10,7 @@ class Queue {
     // object properties
     public $id;
     public $body;
+    public $udh;
     public $queuedDate;
     
     // constructor with $db as database connection
@@ -51,7 +51,7 @@ class Queue {
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    body=:body, queuedDate=:queuedDate ";
+                    body=:body, udh=:udh, queuedDate=:queuedDate ";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -59,10 +59,12 @@ class Queue {
 
         // sanitize
         $this->body =      $this->prepareString($this->body);
+        $this->udh =      $this->$udh;
         $this->queuedDate =     htmlspecialchars(strip_tags($this->queuedDate));
 
         // bind values
         $stmt->bindParam(":body", $this->body);
+        $stmt->bindParam(":udh", $this->udh);
         $stmt->bindParam(":queuedDate", $this->queuedDate);
 
         // execute query
@@ -104,7 +106,7 @@ class Queue {
         $query = "DELETE FROM  
                   " . $this->table_name . " 
                   WHERE
-                   queue_id =:body ";
+                   queue_id =:id ";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -113,7 +115,7 @@ class Queue {
         $this->id =      $this->prepareString($this->id);
 
         // bind values
-        $stmt->bindParam(":id", $this->body);
+        $stmt->bindParam(":id", $this->id);
 
         // execute query
         if($stmt->execute()){

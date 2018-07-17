@@ -42,6 +42,8 @@ class API
                 $queue_item = array(
                     "id" => $id,
                     "body" => $body,
+                    "body" => $smsfrom,
+                    "body" => $smsto,
                     "queuedDate" => $queuedDate,
                 );
 
@@ -113,6 +115,11 @@ class API
         }
 
         $data = json_decode($data);
+        $udh="false";
+        if (strlen($data->body)>160) {
+            $udh="true";
+        }
+        $data->udh=$udh;
 
         //ValidATE DATE
         $message = "";
@@ -126,6 +133,9 @@ class API
 
         // set queue property values
         $this->queue->body = $data->body;
+        $this->queue->smsfrom = $data->smsfrom;
+        $this->queue->smsto = $data->smsto;
+        $this->queue->udh = $data->udh;
         $this->queue->queuedDate = date('Y-m-d H:i:s');
 
         // create the product
@@ -133,6 +143,8 @@ class API
             $queue_item = [
                 "id" => $this->queue->id,
                 "body" => $this->queue->body,
+                "smsfrom" => $this->queue->smsfrom,
+                "smsto" => $this->queue->smsto,
                 "queuedDate" => $this->queue->queuedDate,
             ];
             echo json_encode(
@@ -180,6 +192,24 @@ class API
         //Check if Body is empty or not
         if ($data->body === "") {
             $message = "Body can't be empty";
+        }
+
+        //Check if From is empty or not
+        if ($data->smsfrom === "") {
+            $message = "From Number can't be empty";
+        }
+        //Check if TO is empty or not
+        if ($data->smsto === "") {
+            $message = "To Number can't be empty";
+        }
+
+        //Check if From is number or not
+        if (!is_numeric($data->smsfrom)) {
+            $message = "From Number is not of proper format";
+        }
+        //Check if To is number or not
+        if (!is_numeric($data->smsto)) {
+            $message = "To Number is not of proper format";
         }
         return ($message == "");
     }

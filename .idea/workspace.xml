@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc22451d-b359-4ec7-a1cc-82018a1f7fed" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/logs/error.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logs/sms.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logs/success.log" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/api/msg_controller.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/api/api_controller.php" afterPath="$PROJECT_DIR$/api/api_controller.php" />
       <change beforePath="$PROJECT_DIR$/api/queue_model.php" afterPath="$PROJECT_DIR$/api/queue_model.php" />
@@ -21,11 +19,29 @@
       <file leaf-file-name="api_controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/api_controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="183" column="8" lean-forward="false" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="8" />
-              <folding>
-                <element signature="e#6#48#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="322">
+              <caret line="146" column="20" lean-forward="false" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="msg_controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/msg_controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -33,15 +49,15 @@
       <file leaf-file-name="queue_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/queue_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+            <state relative-caret-position="345">
+              <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding>
-                <marker date="1531755515735" expanded="true" signature="509:666" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-                <marker date="1531755515735" expanded="true" signature="960:1102" ph="INSERT INTO ${$this-&gt;table_name}" />
-                <marker date="1531755515735" expanded="true" signature="1856:1976" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-                <marker date="1531755515735" expanded="true" signature="2227:2339" ph="DELETE FROM queue... " />
-                <marker date="1531755515735" expanded="true" signature="2227:2340" ph="INSERT INTO ${$this-&gt;table_name}" />
-                <marker date="1531755515735" expanded="true" signature="2227:2342" ph="DELETE FROM ${$this-&gt;table_name}" />
+                <marker date="1531845038862" expanded="true" signature="544:701" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+                <marker date="1531845038862" expanded="true" signature="995:1169" ph="INSERT INTO ${$this-&gt;table_name}" />
+                <marker date="1531845038862" expanded="true" signature="2096:2216" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+                <marker date="1531845038862" expanded="true" signature="2467:2579" ph="DELETE FROM queue... " />
+                <marker date="1531845038862" expanded="true" signature="2467:2580" ph="INSERT INTO ${$this-&gt;table_name}" />
+                <marker date="1531845038862" expanded="true" signature="2467:2582" ph="DELETE FROM ${$this-&gt;table_name}" />
               </folding>
             </state>
           </provider>
@@ -54,7 +70,13 @@
       <find>Database</find>
       <find>validateData</find>
       <find>try</find>
+      <find>from</find>
+      <find>to</find>
     </findStrings>
+    <replaceStrings>
+      <replace>smsfrom</replace>
+      <replace>smsto</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,6 +90,7 @@
         <option value="$PROJECT_DIR$/system/database.php" />
         <option value="$PROJECT_DIR$/system/config.php" />
         <option value="$PROJECT_DIR$/worker.php" />
+        <option value="$PROJECT_DIR$/api/msg_controller.php" />
         <option value="$PROJECT_DIR$/api/queue_model.php" />
         <option value="$PROJECT_DIR$/api/api_controller.php" />
       </list>
@@ -97,7 +120,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -110,36 +133,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Queue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Queue" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Queue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Queue" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Queue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Queue" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logs" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Queue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Queue" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="system" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -156,6 +150,7 @@
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.selected.package.jscs" value="" />
+    <property name="SearchEverywhereHistoryKey" value="ind&#9;FILE&#9;file:///var/www/html/Queue/index.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -198,36 +193,58 @@
       <workItem from="1531409981150" duration="11865000" />
       <workItem from="1531717214116" duration="5906000" />
       <workItem from="1531739210559" duration="1658000" />
-      <workItem from="1531748820806" duration="1862000" />
+      <workItem from="1531748820806" duration="1874000" />
+      <workItem from="1531802349571" duration="2488000" />
+      <workItem from="1531841096499" duration="3966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21291000" />
+    <option name="totallyTimeSpent" value="27757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="724" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -240,11 +257,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/api/api_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/queue_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding>
+            <marker date="1531845038862" expanded="true" signature="544:701" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="995:1169" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2096:2216" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2579" ph="DELETE FROM queue... " />
+            <marker date="1531845038862" expanded="true" signature="2467:2580" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2582" ph="DELETE FROM ${$this-&gt;table_name}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -273,7 +312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -282,12 +320,12 @@
         <state relative-caret-position="2140">
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
-            <marker date="1531755515735" expanded="true" signature="509:666" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="960:1102" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="1856:1976" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2339" ph="DELETE FROM queue... " />
-            <marker date="1531755515735" expanded="true" signature="2227:2340" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2342" ph="DELETE FROM ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="544:701" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="995:1169" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2096:2216" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2579" ph="DELETE FROM queue... " />
+            <marker date="1531845038862" expanded="true" signature="2467:2580" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2582" ph="DELETE FROM ${$this-&gt;table_name}" />
           </folding>
         </state>
       </provider>
@@ -296,7 +334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -304,7 +341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -312,7 +348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -320,9 +355,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3520">
           <caret line="178" column="33" lean-forward="false" selection-start-line="178" selection-start-column="33" selection-end-line="178" selection-end-column="33" />
-          <folding>
-            <element signature="e#6#48#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -330,7 +363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -338,7 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -347,12 +378,12 @@
         <state relative-caret-position="1760">
           <caret line="88" column="25" lean-forward="false" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
           <folding>
-            <marker date="1531755515735" expanded="true" signature="509:666" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="960:1102" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="1856:1976" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2339" ph="DELETE FROM queue... " />
-            <marker date="1531755515735" expanded="true" signature="2227:2340" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2342" ph="DELETE FROM ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="544:701" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="995:1169" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2096:2216" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2579" ph="DELETE FROM queue... " />
+            <marker date="1531845038862" expanded="true" signature="2467:2580" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2582" ph="DELETE FROM ${$this-&gt;table_name}" />
           </folding>
         </state>
       </provider>
@@ -361,7 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -369,7 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -377,7 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -385,9 +413,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="820">
           <caret line="41" column="36" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-          <folding>
-            <element signature="e#6#48#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -395,7 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -403,9 +428,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2780">
           <caret line="141" column="34" lean-forward="false" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
-          <folding>
-            <element signature="e#6#48#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -413,7 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -422,12 +444,12 @@
         <state relative-caret-position="1760">
           <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
           <folding>
-            <marker date="1531755515735" expanded="true" signature="509:666" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="960:1102" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="1856:1976" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2339" ph="DELETE FROM queue... " />
-            <marker date="1531755515735" expanded="true" signature="2227:2340" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2342" ph="DELETE FROM ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="544:701" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="995:1169" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2096:2216" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2579" ph="DELETE FROM queue... " />
+            <marker date="1531845038862" expanded="true" signature="2467:2580" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2582" ph="DELETE FROM ${$this-&gt;table_name}" />
           </folding>
         </state>
       </provider>
@@ -436,7 +458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -444,7 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -452,7 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -477,7 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -485,7 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -493,14 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="902" column="9" lean-forward="false" selection-start-line="902" selection-start-column="9" selection-end-line="902" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -530,7 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -538,32 +546,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/msg_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/queue_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="345">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <marker date="1531755515735" expanded="true" signature="509:666" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="960:1102" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="1856:1976" ph="SELECT * FRO... ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2339" ph="DELETE FROM queue... " />
-            <marker date="1531755515735" expanded="true" signature="2227:2340" ph="INSERT INTO ${$this-&gt;table_name}" />
-            <marker date="1531755515735" expanded="true" signature="2227:2342" ph="DELETE FROM ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="544:701" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="995:1169" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2096:2216" ph="SELECT * FRO... ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2579" ph="DELETE FROM queue... " />
+            <marker date="1531845038862" expanded="true" signature="2467:2580" ph="INSERT INTO ${$this-&gt;table_name}" />
+            <marker date="1531845038862" expanded="true" signature="2467:2582" ph="DELETE FROM ${$this-&gt;table_name}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/api_controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="183" column="8" lean-forward="false" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="8" />
-          <folding>
-            <element signature="e#6#48#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="322">
+          <caret line="146" column="20" lean-forward="false" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

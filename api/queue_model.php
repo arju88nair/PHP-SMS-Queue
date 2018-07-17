@@ -1,28 +1,34 @@
 <?php
+
 /**
  * Description of queue
  */
-class Queue {
+class Queue
+{
     // database connection and table name
     private $conn;
     private $table_name = "queue";
-    
+
     // object properties
     public $id;
     public $body;
+    public $smsfrom;
+    public $to;
     public $udh;
     public $queuedDate;
-    
+
     // constructor with $db as database connection
-    public function __construct($db){
+    public function __construct($db)
+    {
         $this->conn = $db;
     }
-    
+
     /**
-     * 
+     *
      * @return list
      */
-    function getQueues($filter){
+    function getQueues($filter)
+    {
 
         // select all query
         $query = "SELECT
@@ -40,38 +46,45 @@ class Queue {
 
         return $stmt;
     }
-    
+
     /**
-     * 
+     *
      * @return boolean
      */
-    function create(){
+    function create()
+    {
 
         // query to insert record
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    body=:body, udh=:udh, queuedDate=:queuedDate ";
+                    body=:body, udh=:udh, smsfrom=:smsfrom, smsto=:smsto, queuedDate=:queuedDate ";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
 
 
+
         // sanitize
-        $this->body =      $this->prepareString($this->body);
-        $this->udh =      $this->$udh;
-        $this->queuedDate =     htmlspecialchars(strip_tags($this->queuedDate));
+        $this->body = $this->prepareString($this->body);
+        $this->smsfrom = $this->smsfrom;
+        $this->smsto = $this->smsto;
+        $this->udh = $this->udh;
+        $this->queuedDate = htmlspecialchars(strip_tags($this->queuedDate));
+
 
         // bind values
         $stmt->bindParam(":body", $this->body);
         $stmt->bindParam(":udh", $this->udh);
+        $stmt->bindParam(":smsfrom", $this->smsfrom);
+        $stmt->bindParam(":smsto", $this->smsto);
         $stmt->bindParam(":queuedDate", $this->queuedDate);
 
         // execute query
-        if($stmt->execute()){
+        if ($stmt->execute()) {
             $this->id = $this->conn->lastInsertId();
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -112,20 +125,22 @@ class Queue {
         $stmt = $this->conn->prepare($query);
 
         // sanitize
-        $this->id =      $this->prepareString($this->id);
+        $this->id = $this->prepareString($this->id);
 
         // bind values
         $stmt->bindParam(":id", $this->id);
 
         // execute query
-        if($stmt->execute()){
+        if ($stmt->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    private function prepareString($value) {
-        return ($value."" =="")? null:  htmlspecialchars(strip_tags($value));
+    private function prepareString($value)
+    {
+        return ($value . "" == "") ? null : htmlspecialchars(strip_tags($value));
     }
+
 }

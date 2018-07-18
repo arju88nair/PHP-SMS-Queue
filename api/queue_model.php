@@ -112,7 +112,9 @@ class Queue
         return $stmt;
     }
 
-
+/*
+ * Return boolean
+ */
     function removeOne($id)
     {
         // query to remove record

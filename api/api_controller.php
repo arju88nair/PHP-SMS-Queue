@@ -65,8 +65,9 @@ class API
     }
 
 
+
     /**
-     * The queue daemon where it is ran on cron job for every second to call the SMS api
+     * The queue daemon where it is ran on cron job for every minute to call the SMS api
      * @param string $params
      */
     public function queueCheck()
@@ -247,7 +248,8 @@ class API
        $flag= $this->queue->removeOne($id);
        if($flag)
        {
-           error_log(print_r((array)"Successfully removed", true), 3, 'logs/success.log');
+           // array for beautification
+           error_log(print_r((array)"Successfully removed for", true), 3, 'logs/success.log');
        }
        else{
            error_log(print_r((array)"Something went wrong", true), 3, 'logs/error.log');

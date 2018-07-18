@@ -1,14 +1,14 @@
 # PHP-Queue
-a PHP RESTful API to work with the queue system in order to insert and retrieve queue entries from the database.
+a PHP RESTful API to work with the queue system in order to insert and retrieve queue entries from the database which works in tandem with an SMS (mock) system.
 
 ---
 ## Scenario
-A RESTful API for sending SMS (which is currently logged instead of proper API call ) with a mock implementation of UDH headers (I might be wrong with this) where a rudimentary queue system is created so that1 request per second will be sent
+A RESTful API for sending SMS (which is currently logged instead of proper API call ) with a mock implementation of UDH headers (I might be wrong with this) where a rudimentary queue system is created so that 1 request per second will be sent
 ---
 ## Requirements
 Can run on PHP 5.6+ (As far as I tested)
 
-## Methods Accept
+## Methods 
 
 | Method | Data Type | Path | Purpose |
 |--------|--------|--------|--------|

@@ -1,4 +1,7 @@
 <?php
+/**
+ * The entry point where the routing and and HTTP actions are happening
+ */
 
 include_once 'system/config.php';
 include_once 'system/request.php';

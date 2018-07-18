@@ -1,6 +1,5 @@
 <?php
 /**
- * Written by nar, 13/7/18 3:34 PM
  */
 
 include_once 'queue_model.php';
@@ -42,8 +41,9 @@ class API
                 $queue_item = array(
                     "id" => $id,
                     "body" => $body,
-                    "body" => $smsfrom,
-                    "body" => $smsto,
+                    "smsfrom" => $smsfrom,
+                    "smsto" => $smsto,
+                    "udh" => $udh,
                     "queuedDate" => $queuedDate,
                 );
 
@@ -64,11 +64,12 @@ class API
      * To do the worker methods
      * @param string $params
      */
-    public function queueCheck($params = "")
+    public function queueCheck()
     {
 
+
         // query products
-        $stmt = $this->queue->getOne($params);
+        $stmt = $this->queue->getOne();
         $num = $stmt->rowCount();
 
         // check if more than 0 record found
@@ -86,6 +87,9 @@ class API
                 $queue_item = array(
                     "id" => $id,
                     "body" => $body,
+                    "smsfrom" => $smsfrom,
+                    "smsto" => $smsto,
+                    "udh" => $udh,
                     "queuedDate" => $queuedDate,
                 );
 
@@ -115,21 +119,20 @@ class API
         }
 
         $data = json_decode($data);
+
         $udh="false";
         if (strlen($data->body)>160) {
             $udh="true";
         }
         $data->udh=$udh;
 
-        //ValidATE DATE
+        //Validate Data
         $message = "";
         if (!$this->validateData($data, $message)) {
             $message = "Error, Validate data. " . $message;
             $this->responseError($message);
             exit();
         }
-
-
 
         // set queue property values
         $this->queue->body = $data->body;
@@ -176,7 +179,7 @@ class API
     public function unQueue($params)
     {
 
-        $this->queue->removeOne();
+        $this->queue->removeOne($params);
     }
 
     private function isJSON($jsonString)
@@ -190,16 +193,16 @@ class API
         $message = "";
 
         //Check if Body is empty or not
-        if ($data->body === "") {
+        if ($data->body === "" || !isset($data->body) ) {
             $message = "Body can't be empty";
         }
 
         //Check if From is empty or not
-        if ($data->smsfrom === "") {
+        if ($data->smsfrom === "" || !isset($data->smsfrom)) {
             $message = "From Number can't be empty";
         }
         //Check if TO is empty or not
-        if ($data->smsto === "") {
+        if ($data->smsto === "" || !isset($data->smsto)) {
             $message = "To Number can't be empty";
         }
 
@@ -218,7 +221,25 @@ class API
     {
         // Do the mock dumping of SMS data to the log
         $body=$data['body'];
-        error_log(print_r($body, true), 3, 'logs/sms.log');
+        if($data['udh'] === 'true')
+        {
+                // splitting the body for 160 characters
+                $body=str_split($body,160);
+                $i=0;
+                // dummy base UDH
+                $baseUdh="05 00 03 CC ".sprintf("%02d", count($body));
+                foreach ($body as $item)
+                {
+                    $i++;
+                    $udh=$baseUdh." ".sprintf("%02d", $i);
+                    $data['body']=$udh.$item;
+                    error_log(print_r((array)$data,true),3,'logs/sms.log');
+
+
+                }
+            return false;
+        }
+        error_log(print_r((array)$data,true),3,'logs/sms.log');
 
         $this->removeQueue($data['id']);
 

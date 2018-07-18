@@ -22,5 +22,4 @@ $db = $database->getConnection();
 $api = New API($db);
 //header("Access-Control-Allow-Origin: *");
 //header("Content-Type: application/json; charset=UTF-8");
-
-$api->queueCheck($params);
+$api->queueCheck();

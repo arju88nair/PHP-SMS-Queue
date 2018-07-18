@@ -113,19 +113,19 @@ class Queue
     }
 
 
-    function removeOne()
+    function removeOne($id)
     {
         // query to remove record
         $query = "DELETE FROM  
                   " . $this->table_name . " 
                   WHERE
-                   queue_id =:id ";
+                   id =:id ";
 
         // prepare query
         $stmt = $this->conn->prepare($query);
 
         // sanitize
-        $this->id = $this->prepareString($this->id);
+        $this->id = $this->prepareString($id);
 
         // bind values
         $stmt->bindParam(":id", $this->id);

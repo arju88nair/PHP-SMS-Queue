@@ -1,5 +1,6 @@
 <?php
 /**
+ * Where the controller methods are
  */
 
 include_once 'queue_model.php';
@@ -17,6 +18,9 @@ class API
         $this->queue = new Queue($db_connection);
     }
 
+    /*
+     * For developer purposes
+     */
     public function getAllQueue($params = "")
     {
 
@@ -60,13 +64,13 @@ class API
         }
     }
 
+
     /**
-     * To do the worker methods
+     * The queue daemon where it is ran on cron job for every second to call the SMS api
      * @param string $params
      */
     public function queueCheck()
     {
-
 
         // query products
         $stmt = $this->queue->getOne();
@@ -79,9 +83,6 @@ class API
             $queue_arr["data"] = [];
 
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                // extract row
-                // this will make $row['name'] to
-                // just $name only
                 extract($row);
 
                 $queue_item = array(
@@ -94,7 +95,6 @@ class API
                 );
 
             }
-
             $this->SMSController($queue_item);
         } else {
             echo json_encode(
@@ -106,6 +106,9 @@ class API
         }
     }
 
+    /*
+     * The main API where the SMS object is getting inserted to the queue
+     */
 
     public function create()
     {
@@ -152,7 +155,7 @@ class API
             ];
             echo json_encode(
                 [
-                    "status" => "success",
+                    "status" => "Successfully sent",
                     "data" => $queue_item
                 ]
             );
@@ -169,17 +172,6 @@ class API
                 "message" => $message
             ]
         );
-    }
-
-    public function sendSMS()
-    {
-
-    }
-
-    public function unQueue($params)
-    {
-
-        $this->queue->removeOne($params);
     }
 
     private function isJSON($jsonString)
@@ -226,8 +218,8 @@ class API
                 // splitting the body for 160 characters
                 $body=str_split($body,160);
                 $i=0;
-                // dummy base UDH
-                $baseUdh="05 00 03 CC ".sprintf("%02d", count($body));
+                // dummy base UDH header
+                $baseUdh="06 01 03 DD ".sprintf("%02d", count($body));
                 foreach ($body as $item)
                 {
                     $i++;
@@ -239,12 +231,17 @@ class API
                 }
             return false;
         }
+        // For single message part
+        $data['body']='05 00 03 CC 01 01 '.$body;
         error_log(print_r((array)$data,true),3,'logs/sms.log');
 
         $this->removeQueue($data['id']);
 
     }
 
+    /*
+     * To un queue the entry
+     */
     private function removeQueue($id)
     {
        $flag= $this->queue->removeOne($id);

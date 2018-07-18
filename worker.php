@@ -4,7 +4,6 @@
  */
 
 include_once 'system/config.php';
-include_once 'system/request.php';
 include_once 'system/database.php';
 include_once 'api/api_controller.php';
 
@@ -20,6 +19,5 @@ if (!array_key_exists('HTTP_ORIGIN', $_SERVER)) {
 $database = new Database($config_database);
 $db = $database->getConnection();
 $api = New API($db);
-//header("Access-Control-Allow-Origin: *");
-//header("Content-Type: application/json; charset=UTF-8");
+
 $api->queueCheck();

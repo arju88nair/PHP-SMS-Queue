@@ -16,15 +16,15 @@ Can run on PHP 5.6+ (As far as I tested)
 | POST    | JSON |/queue  |Create a new entry into the queue table with the current timestamp|
 
 ## Installations
-1.Crete database(queue_system) in your Mysql
+1. Crete database(queue_system) in your Mysql
 
-2.Run the SQL script in file **data.sql** to create the database table with some enteries
+2. Run the SQL script in file **data.sql** to create the database table with some enteries
 
 3. After the required DB configurations, can run the given **worker.sh** as a cron job by
-```
-* * * * * sh /var/www/html/Queue/worker.sh
-
-```
-which will run the script every minute and can act as a rate limiter
-
-
+  ```
+  * * * * * sh /var/www/html/Queue/worker.sh
+  
+  ```
+  which will run the script every minute and can act as a rate limiter
+  
+  

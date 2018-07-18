@@ -227,14 +227,14 @@ class API
                     $data['body']=$udh.$item;
                     error_log(print_r((array)$data,true),3,'logs/sms.log');
 
-
                 }
-            return false;
         }
-        // For single message part
-        $data['body']='05 00 03 CC 01 01 '.$body;
-        error_log(print_r((array)$data,true),3,'logs/sms.log');
+        else{
+            // For single message part
+            $data['body']='05 00 03 CC 01 01 '.$body;
+            error_log(print_r((array)$data,true),3,'logs/sms.log');
 
+        }
         $this->removeQueue($data['id']);
 
     }
@@ -247,10 +247,10 @@ class API
        $flag= $this->queue->removeOne($id);
        if($flag)
        {
-           error_log(print_r("Successfully removed", true), 3, 'logs/success.log');
+           error_log(print_r((array)"Successfully removed", true), 3, 'logs/success.log');
        }
        else{
-           error_log(print_r("Something went wrong", true), 3, 'logs/error.log');
+           error_log(print_r((array)"Something went wrong", true), 3, 'logs/error.log');
 
        }
     }

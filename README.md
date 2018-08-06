@@ -1,6 +1,5 @@
 # PHP-Queue
-A PHP RESTful API to work with the queue system in order to insert and retrieve queue entries from the database which works in tandem with an SMS (mock) system. Bootstrapped from [Anansaleh](https://github.com/anansaleh/PHP-RESTful-API)
-
+A PHP RESTful API to work with the queue system in order to insert and retrieve queue entries from the database which works in tandem with an SMS (mock) system. 
 ---
 ## Scenario
 
